@@ -30,4 +30,6 @@ return [
 
     'compiled' => realpath(storage_path('framework/views')),
 
+
+    'css' => env('APP_CSS', 'css/app.css'),
 ];

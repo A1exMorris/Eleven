@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCheckMenTable extends Migration
+class CreateUploadFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,8 @@ class CreateCheckMenTable extends Migration
      */
     public function up()
     {
-        Schema::create('check_men', function (Blueprint $table) {
+        Schema::create('upload_files', function (Blueprint $table) {
             $table->increments('id');
-
-
-            $table->dateTime('date_time');
-            $table->string('event');
-            $table->string('zone');
-            $table->string('name_surname');
-            $table->string('personal_number');
-
-
             $table->timestamps();
         });
     }
@@ -35,6 +26,6 @@ class CreateCheckMenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('check_men');
+        Schema::dropIfExists('upload_files');
     }
 }

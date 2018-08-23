@@ -3,23 +3,24 @@
 namespace KaravayPro\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 
-class RedirectIfAuthenticated
+class CheckRole
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+
+        if($request->user()===null)
+        {
+            return response("incifisient permission",401);
         }
+        $actions=$request->route()->getAction();
 
         return $next($request);
     }

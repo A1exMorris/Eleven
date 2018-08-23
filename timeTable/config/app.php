@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'KaravayPro'),
 
     /*
     |--------------------------------------------------------------------------
@@ -172,11 +172,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        KaravayPro\Providers\AppServiceProvider::class,
+        KaravayPro\Providers\AuthServiceProvider::class,
+        // KaravayPro\Providers\BroadcastServiceProvider::class,
+        KaravayPro\Providers\EventServiceProvider::class,
+        KaravayPro\Providers\RouteServiceProvider::class,
 
     ],
 

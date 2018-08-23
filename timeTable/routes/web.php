@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/upload', function () {
-    return view('welcome');
-});
+
+
+
+Auth::routes();
+
+
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
+Route::get('/upload','UploadFileController@uploadForm')->name('upload');
+Route::post('/upload','UploadFileController@uploadSubmit');
+Route::get('/roles','UserRolesController@index')->name('roles');
+Route::post('/roles','UserRolesController@postAssignRoles');
+
